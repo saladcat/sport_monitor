@@ -46,3 +46,7 @@ class Pose(object):
             score["index"] = (dist, cost, acc, path)
 
         return sum_dist, score
+
+    def save_as_std(self, file_name="std_dump_file"):
+        mydb = open(file_name, 'w')
+        pickle.dump(self.time_seq_dict, mydb)

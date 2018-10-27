@@ -17,7 +17,5 @@ if __name__ == '__main__':
             break
         cv2.imshow("output", img)
         cv2.waitKey(1)
-    # mydb = open('std_pushup', 'w')
-    # pickle.dump(a.get_time_seq_pram(), mydb)
     print a.get_time_seq_pram()
     print a.eval()[0]

@@ -22,11 +22,12 @@ class Pose(object):
         for index in dict:
             self.time_seq_dict[index].append(dict[index])
 
-    def get_time_seq_pram(self):
+    def get_time_seq_pram(self, file_name):
         for index in self.time_seq_dict:
             x = [i for i in range(len(self.time_seq_dict[index]))]
             plt.plot(x, self.time_seq_dict[index], label=index)
         plt.legend()
+        plt.savefig(file_name)
         plt.show()
 
         return self.time_seq_dict

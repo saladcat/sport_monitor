@@ -42,8 +42,13 @@ class BasketPose(Pose):
     def eval(self, file_name="resource/std_basketball"):
         return super(BasketPose, self).eval(file_name)
 
+    def get_time_seq_pram(self, file_name="output/basketball.jpg"):
+        return super(BasketPose, self).get_time_seq_pram(file_name)
+
 
 def get_basket_angles(keypoint):
     angel_arm1_right, confidence_arm1_right = get_angle(keypoint, 2, 3, 4)  # xiao ge bo & da ge bo
     angel_arm2_right, confidence_arm2_right = get_angle(keypoint, 1, 2, 3)  # da ge bo & jian bang
+    angel_arm3_right, confidence_arm3_right = get_angle(keypoint, 3, 2, 8)  # da ge bo & shen zi
+
     return angel_arm1_right, angel_arm2_right, angel_arm3_right

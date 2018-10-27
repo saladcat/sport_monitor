@@ -40,6 +40,9 @@ class PushupPose(Pose):
     def eval(self, file_name="resource/std_pushup"):
         return super(PushupPose, self).eval(file_name)
 
+    def get_time_seq_pram(self, file_name="output/pushup.jpg"):
+        return super(PushupPose, self).get_time_seq_pram(file_name)
+
 
 def get_pushup_angles(keypoint):
     angel_body_right, confidence_body_right = get_angle(keypoint, 1, 8, 13)  # xiao ge bo & da ge bo

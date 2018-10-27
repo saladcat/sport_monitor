@@ -40,6 +40,9 @@ class SitupPose(Pose):
     def eval(self, file_name="resource/std_situp"):
         return super(SitupPose, self).eval(file_name)
 
+    def get_time_seq_pram(self, file_name="output/situp.jpg"):
+        return super(SitupPose, self).get_time_seq_pram(file_name)
+
 
 def get_situp_angles(keypoint):
     head_ang, head_confidence = get_angle(keypoint, 0, 1, 8)

@@ -7,6 +7,7 @@ from SitupPose import SitupPose
 from BasketPose import BasketPose
 from PushupPose import PushupPose
 import cv2
+import math
 from PIL import Image,ImageTk
 import matplotlib.pyplot as plt
 import numpy as np
@@ -58,7 +59,8 @@ def start():
            # text.append('\n')
             text=text+index+':'+str(prams[index])+'\n'
         label_angel.config(text=text)
-    label_angel.config(text=text+'\n'+'evalution is:'+str(a.eval()[0]))
+        result_value=1-(1/(1+math.e**(0-a.eval()[0]))-0.5)
+    label_angel.config(text=text+'\n'+'evalution is:'+str(result_value))
     print a.get_time_seq_pram()
     print a.eval()[0]
     zhexiaotu=ImageTk.PhotoImage(file="/home/zhu/code/openpose/build/examples/tutorial_api_python/output"+"/"+mode.get()+".jpg")

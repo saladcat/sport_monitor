@@ -7,9 +7,9 @@ import numpy as np
 import pickle
 
 if __name__ == '__main__':
-    # a = SitupPose("/home/zhu/Desktop/1.gif")
-    a = BasketPose("/home/zhu/Desktop/2.gif")
-    # a = PushupPose("/home/zhu/Desktop/3.gif")
+    #a = SitupPose("/home/zhu/Desktop/1.gif")
+    #a = BasketPose("/home/zhu/Desktop/2.gif")
+    a = PushupPose("/home/zhu/Desktop/3.gif")
     ret = True
     while ret is True:
         ret, img, prams = a.process()

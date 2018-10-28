@@ -32,9 +32,11 @@ class SitupPose(Pose):
                         0.5,
                         (0, 0, 255), 1)
             self._record(prams)
+            output_img = cv2.resize(output_img, (400, 300), interpolation=cv2.INTER_CUBIC)
         else:
             output_img = None
             prams = None
+
         return ret, output_img, prams
 
     def eval(self, file_name="resource/std_situp"):

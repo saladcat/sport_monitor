@@ -58,6 +58,7 @@ def start():
            # text.append('\n')
             text=text+index+':'+str(prams[index])+'\n'
         label_angel.config(text=text)
+    label_angel.config(text=text+'\n'+'evalution is:'+str(a.eval()[0]))
     print a.get_time_seq_pram()
     print a.eval()[0]
     zhexiaotu=ImageTk.PhotoImage(file="/home/zhu/code/openpose/build/examples/tutorial_api_python/output"+"/"+mode.get()+".jpg")

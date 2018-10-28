@@ -23,7 +23,7 @@ class Pose(object):
             self.time_seq_dict[index].append(dict[index])
 
     def get_time_seq_pram(self, file_name):
-        plt.figure(figsize=(4,3))
+        plt.figure(figsize=(4, 3))
         for index in self.time_seq_dict:
             x = [i for i in range(len(self.time_seq_dict[index]))]
             plt.plot(x, self.time_seq_dict[index], label=index)
@@ -41,9 +41,12 @@ class Pose(object):
         sum_dist = 0
         for index in self.time_seq_dict:
             dist, cost, acc, path = dtw(
-                self.time_seq_dict[index],
-                self.std_seq_dict[index],
-                dist=lambda x, y: math.sqrt((x * x) + (y * y)))
+                np.asarray(self.time_seq_dict[index]).reshape(-1, 1),
+                np.asarray(self.std_seq_dict[index]).reshape(-1, 1),
+                dist=lambda x, y: np.linalg.norm(x - y, ord=1))
+            # dist=lambda x, y: math.sqrt((x * x) + (y * y)))
+            # dist=lambda x, y: math.fabs((x -y)))
+
             sum_dist += dist
             score["index"] = (dist, cost, acc, path)
 
